@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Mahjong</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="util/three.js"></script>
+    <script type="text/javascript" src="util/three.min.js"></script>
+    <script type="text/javascript" src="util/three.module.js"></script>
+	<script type="text/javascript" src="util/OBJLoader.js"></script>
+    <script type="text/javascript" src="util/MTLLoader.js"></script>
+    <script type="text/javascript" src="util/TrackballControls.js"></script>
+    <script type="text/javascript" src="util/Detector.js"></script>
+    <script type="text/javascript" src="util/stats.min.js"></script>
+    <script type="text/javascript" src="util/tween.min.js"></script>
+
+    <script type="text/javascript" src="js/myUtils/Constant.js"></script>
+    <script type="text/javascript" src="js/myUtils/playersUtil.js"></script>
+    <script type="text/javascript" src="js/myUtils/toolsUtil.js"></script>
+    <script type="text/javascript" src="js/myUtils/mouseListenerUtil.js"></script>
+    <script type="text/javascript" src="js/myUtils/webSocketLinkUtil.js"></script>
+    <script type="text/javascript" src="js/myUtils/stringAndIntChange.js"></script>
+
+    <script type="text/javascript" src="js/init/initScene.js"></script>
+    <script type="text/javascript" src="js/init/initMahjongModel.js"></script>
+    <script type="text/javascript" src="js/init/initTImeImg.js"></script>
+    <script type="text/javascript" src="js/init/initTextures.js"></script>
+    <script type="text/javascript" src="js/init/initMaterial.js"></script>
+    <script type="text/javascript" src="js/init/initqipai.js"></script>
+    <script type="text/javascript" src="js/init/initMusic.js"></script>
+
+    <script type="text/javascript" src="js/add/addWebSocketLink.js"></script>
+    <script type="text/javascript" src="js/add/addMouseListener.js"></script>
+    <script type="text/javascript" src="js/add/addSkyBox.js"></script>
+    <script type="text/javascript" src="js/add/addSprite.js"></script>
+    <script type="text/javascript" src="js/add/addMaJongHuCartoon.js"></script>
+    <script type="text/javascript" src="js/add/addMahJongPengCartoon.js"></script>
+    <script type="text/javascript" src="js/add/addEndChupaiCartoon.js"></script>
+    <script type="text/javascript" src="js/add/addMahJongChiCartoon.js"></script>
+    <script type="text/javascript" src="js/add/addManjongGangCartoon.js"></script>
+
+    <script type="text/javascript" src="js/ceshi.js"></script>
+
+    <script type="text/javascript" src="js/Manager/orderManager.js"></script>
+    <script type="text/javascript" src="js/Manager/mahjongPengManager.js"></script>
+    <script type="text/javascript" src="js/Manager/iconManager.js"></script>
+    <script type="text/javascript" src="js/Manager/mahjongChiManager.js"></script>
+    <script type="text/javascript" src="js/Manager/mahjongGangManager.js"></script>
+    <script type="text/javascript" src="js/Manager/mahjongHuManager.js"></script>
+    <script type="text/javascript" src="js/Manager/directionmanager.js"></script>
+
+    <script type="text/javascript" src="js/rules/start.js"></script>
+    <script type="text/javascript" src="js/rules/time.js"></script>
+    <script type="text/javascript" src="js/rules/resetGame.js"></script>
+    <script type="text/javascript" src="js/rules/endchupaicartoon.js"></script>
+    <script type="text/javascript" src="js/rules/numberFourteenManager.js"></script>
+    <script type="text/javascript" src="js/rules/qpsort.js"></script>
+    <script type="text/javascript" src="js/rules/eastPlayer.js"></script>
+    <script type="text/javascript" src="js/rules/eastPlayer.js"></script>
+    <script type="text/javascript" src="js/rules/southPlayer.js"></script>
+    <script type="text/javascript" src="js/rules/westPlayer.js"></script>
+    <script type="text/javascript" src="js/rules/northPlayer.js"></script>
+    <script type="text/javascript" src="js/rules/mahJongPengChiHu.js"></script>
+    <script type="text/javascript" src="js/rules/mahJongHuRules.js"></script>
+
+
+
+    <!-- skybox shaders -->
+    <script type="application/x-glsl" id="sky-vertex">
+    varying vec2 vUV;
+
+    void main() {
+     vUV = uv;
+     vec4 pos = vec4(position, 1.0);
+     gl_Position = projectionMatrix * modelViewMatrix * pos;
+    }
+    </script>
+
+    <script type="application/x-glsl" id="sky-fragment">
+    uniform sampler2D texture;
+    varying vec2 vUV;
+
+    void main() {
+    vec4 sample = texture2D(texture, vUV);
+    gl_FragColor = vec4(sample.xyz, sample.w);
+    }
+    </script>
+
+
+    <script type="x-shader/x-vertex" id="vertexshader">
+        attribute float size;
+			attribute vec3 position2;
+			// attribute vec3 color;
+			uniform float val;
+			// varying vec3 vColor;
+			varying vec3 vPos;
+
+			void main() {
+
+				// vColor = color;
+				vPos.x = position.x * val + position2.x * (1.-val);
+				vPos.y = position.y* val + position2.y * (1.-val);
+				vPos.z = position.z* val + position2.z * (1.-val);
+
+				vec4 mvPosition = modelViewMatrix * vec4( vPos, 1.0 );
+
+				gl_PointSize = size * ( 300.0 / -mvPosition.z );
+
+				gl_Position = projectionMatrix * mvPosition;
+
+			}
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentshader">
+			uniform vec3 color;
+			uniform sampler2D texture;
+
+			// varying vec3 vColor;
+			varying vec3 vPos;
+
+			void main() {
+
+				vec3 vColor = vec3(1.0, 0., 0.);
+				vColor.r = vPos.z/50.;
+				vColor.g = vPos.y/50.;
+				vColor.b = vPos.x/50.;
+
+				gl_FragColor = vec4( color * vColor, 1.0 );
+
+				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
+
+			}
+
+
+		</script>
+
+    <style>
+        body {
+            /* set margin to 0 and overflow to hidden, to go fullscreen */
+            margin: 0;
+            overflow: hidden;
+        }
+        div.chi
+        {
+            width:250px;
+            height:250px;
+            position: absolute;
+            left:35%;
+            top: 60%;
+            display: none;
+            animation:chi 2s;
+            -moz-animation:chi 2s; /* Firefox */
+            -webkit-animation:chi 2s; /* Safari and Chrome */
+            -o-animation:chi 2s; /* Opera */
+        }
+
+        div.gang
+        {
+            width:250px;
+            height:250px;
+            position: absolute;
+            left:35%;
+            top: 60%;
+            display: none;
+            animation:gang 2s;
+            -moz-animation:gang 2s; /* Firefox */
+            -webkit-animation:gang 2s; /* Safari and Chrome */
+            -o-animation:gang 2s; /* Opera */
+        }
+
+        div.peng
+        {
+            width:250px;
+            height:250px;
+            position: absolute;
+            left:35%;
+            top: 60%;
+            display: none;
+            animation:peng 2s;
+            -moz-animation:peng 2s; /* Firefox */
+            -webkit-animation:peng 2s; /* Safari and Chrome */
+            -o-animation:peng 2s; /* Opera */
+        }
+
+        div.hu
+        {
+            width:250px;
+            height:250px;
+            position: absolute;
+            left:35%;
+            top: 60%;
+            display: none;
+            animation:hu 2s;
+            -moz-animation:hu 2s; /* Firefox */
+            -webkit-animation:hu 2s; /* Safari and Chrome */
+            -o-animation:hu 2s; /* Opera */
+        }
+
+        div.backgroundChineseInk
+        {
+            width:250px;
+            height:250px;
+            position: absolute;
+            left:35%;
+            top: 60%;
+            display: none;
+            animation:backgroundChineseInk 2s;
+            -moz-animation:backgroundChineseInk 2s; /* Firefox */
+            -webkit-animation:backgroundChineseInk 2s; /* Safari and Chrome */
+            -o-animation:backgroundChineseInk 2s; /* Opera */
+        }
+
+        div.cTime
+        {
+            width: 1550px;
+            height:776px;
+            position: absolute;
+            left:0%;
+            display:none;
+            top: 0%;
+            animation:cTimeCartoon 1s;
+            -moz-animation:cTimeCartoon 1s; /* Firefox */
+            -webkit-animation:cTimeCartoon 1s; /* Safari and Chrome */
+            -o-animation:cTimeCartoon 1s; /* Opera */
+        }
+
+
+        @keyframes cTimeCartoon {
+            0%   {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            25%  {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            50%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.1;transform:scale(1.0);}
+            60%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.5;transform:scale(1.7);}
+            80%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.6;transform:scale(1.9);}
+            90%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.8;transform:scale(2.1);}
+            100% {background:url(img/backIcon/background.png)no-repeat;opacity:1.0;transform:scale(2.5);}
+        }
+
+        @-moz-keyframes cTimeCartoon {
+            0%   {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            25%  {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            50%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.2;transform:scale(1.0);}
+            60%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.5;transform:scale(1.7);}
+            80%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.7;transform:scale(1.9);}
+            90%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.9;transform:scale(2.1);}
+            100% {background:url(img/backIcon/background.png)no-repeat;opacity:1.0;transform:scale(2.5);}
+        }
+
+        @-webkit-keyframes cTimeCartoon {
+            0%   {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            25%  {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            50%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.2;transform:scale(1.0);}
+            60%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.5;transform:scale(1.7);}
+            80%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.7;transform:scale(1.9);}
+            90%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.9;transform:scale(2.1);}
+            100% {background:url(img/backIcon/background.png)no-repeat;opacity:1.0;transform:scale(2.5);}
+        }
+
+        @-o-keyframes cTimeCartoon {
+            0%   {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            25%  {background:url(img/backIcon/background.png)no-repeat;opacity:0;}
+            50%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.2;transform:scale(1.0);}
+            60%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.5;transform:scale(1.7);}
+            80%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.7;transform:scale(1.9);}
+            90%  {background:url(img/backIcon/background.png)no-repeat;opacity:0.9;transform:scale(2.1);}
+            100% {background:url(img/backIcon/background.png)no-repeat;opacity:1.0;transform:scale(2.5);}
+        }
+
+
+
+        @keyframes backgroundChineseInk {
+            0%   {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            25%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            50%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.2;transform:scale(0.2);}
+            60%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.5;transform:scale(1.5);}
+            80%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.7;transform:scale(1.5);}
+            90%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.9;transform:scale(1.5);}
+            100% {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:1.0;transform:scale(1.5);}
+        }
+
+        @-moz-keyframes   backgroundChineseInk {
+            0%   {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            25%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            50%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.2;transform:scale(0.2);}
+            60%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.5;transform:scale(1.5);}
+            80%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.7;transform:scale(1.5);}
+            90%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.9;transform:scale(1.5);}
+            100% {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:1.0;transform:scale(1.5);}
+        }
+
+        @-webkit-keyframes backgroundChineseInk {
+            0%   {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            25%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            50%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.2;transform:scale(0.2);}
+            60%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.5;transform:scale(1.5);}
+            80%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.7;transform:scale(1.5);}
+            90%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.9;transform:scale(1.5);}
+            100% {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:1.0;transform:scale(1.5);}
+        }
+
+        @-o-keyframes backgroundChineseInk {
+            0%   {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            25%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0;}
+            50%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.2;transform:scale(0.2);}
+            60%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.3;transform:scale(1.3);}
+            70%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.5;transform:scale(1.5);}
+            80%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.7;transform:scale(1.5);}
+            90%  {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:0.9;transform:scale(1.5);}
+            100% {background:url(img/cartoonImg/hu_moji.png)no-repeat;opacity:1.0;transform:scale(1.5);}
+        }
+
+        @keyframes chi
+        {
+            0%   {background-image:url(img/cartoonImg/chi1.png);}
+            25%  {background-image:url(img/cartoonImg/chi2.png);}
+            50%  {background-image:url(img/cartoonImg/chi3.png);}
+            100% {background-image:url(img/cartoonImg/chi3.png);}
+        }
+
+        @-moz-keyframes chi /* Firefox */
+        {
+            0%   {background-image:url(img/cartoonImg/chi1.png);}
+            25%  {background-image:url(img/cartoonImg/chi2.png);}
+            50%  {background-image:url(img/cartoonImg/chi3.png);}
+            100% {background-image:url(img/cartoonImg/chi3.png);}
+        }
+
+        @-webkit-keyframes chi /* Safari and Chrome */
+        {
+            0%   {background-image:url(img/cartoonImg/chi1.png);}
+            25%  {background-image:url(img/cartoonImg/chi2.png);}
+            50%  {background-image:url(img/cartoonImg/chi3.png);}
+            100% {background-image:url(img/cartoonImg/chi3.png);}
+        }
+
+        @-o-keyframes chi /* Opera */
+        {
+            0%   {background-image:url(img/cartoonImg/chi1.png);}
+            25%  {background-image:url(img/cartoonImg/chi2.png);}
+            50%  {background-image:url(img/cartoonImg/chi3.png);}
+            100% {background-image:url(img/cartoonImg/chi3.png);}
+        }
+
+        @keyframes gang
+        {
+            0%   {background-image:url(img/cartoonImg/gang1.png);}
+            25%  {background-image:url(img/cartoonImg/gang2.png);}
+            50%  {background-image:url(img/cartoonImg/gang3.png);}
+            100% {background-image:url(img/cartoonImg/gang3.png);}
+        }
+
+        @-moz-keyframes gang /* Firefox */
+        {
+            0%   {background-image:url(img/cartoonImg/gang1.png);}
+            25%  {background-image:url(img/cartoonImg/gang2.png);}
+            50%  {background-image:url(img/cartoonImg/gang3.png);}
+            100% {background-image:url(img/cartoonImg/gang3.png);}
+        }
+
+        @-webkit-keyframes gang /* Safari and Chrome */
+        {
+            0%   {background-image:url(img/cartoonImg/gang1.png);}
+            25%  {background-image:url(img/cartoonImg/gang2.png);}
+            50%  {background-image:url(img/cartoonImg/gang3.png);}
+            100% {background-image:url(img/cartoonImg/gang3.png);}
+        }
+
+        @-o-keyframes gang /* Opera */
+        {
+            0%   {background-image:url(img/cartoonImg/gang1.png);}
+            25%  {background-image:url(img/cartoonImg/gang2.png);}
+            50%  {background-image:url(img/cartoonImg/gang3.png);}
+            100% {background-image:url(img/cartoonImg/gang3.png);}
+        }
+
+        @keyframes peng
+        {
+            0%   {background-image:url(img/cartoonImg/peng1.png);}
+            25%  {background-image:url(img/cartoonImg/peng2.png);}
+            50%  {background-image:url(img/cartoonImg/peng3.png);}
+            100% {background-image:url(img/cartoonImg/peng3.png);}
+        }
+
+        @-moz-keyframes peng /* Firefox */
+        {
+            0%   {background-image:url(img/cartoonImg/peng1.png);}
+            25%  {background-image:url(img/cartoonImg/peng2.png);}
+            50%  {background-image:url(img/cartoonImg/peng3.png);}
+            100% {background-image:url(img/cartoonImg/peng3.png);}
+        }
+
+        @-webkit-keyframes peng /* Safari and Chrome */
+        {
+            0%   {background-image:url(img/cartoonImg/peng1.png);}
+            25%  {background-image:url(img/cartoonImg/peng2.png);}
+            50%  {background-image:url(img/cartoonImg/peng3.png);}
+            100% {background-image:url(img/cartoonImg/peng3.png);}
+        }
+
+        @-o-keyframes peng /* Opera */
+        {
+            0%   {background-image:url(img/cartoonImg/peng1.png);}
+            25%  {background-image:url(img/cartoonImg/peng2.png);}
+            50%  {background-image:url(img/cartoonImg/peng3.png);}
+            100% {background-image:url(img/cartoonImg/peng3.png);}
+        }
+
+        @keyframes hu
+        {
+            0%   {background-image:url(img/cartoonImg/hu1.png);}
+            25%  {background-image:url(img/cartoonImg/hu2.png);}
+            50%  {background-image:url(img/cartoonImg/hu3.png);}
+            100% {background-image:url(img/cartoonImg/hu3.png);}
+        }
+
+        @-moz-keyframes hu /* Firefox */
+        {
+            0%   {background-image:url(img/cartoonImg/hu1.png);}
+            25%  {background-image:url(img/cartoonImg/hu2.png);}
+            50%  {background-image:url(img/cartoonImg/hu3.png);}
+            100% {background-image:url(img/cartoonImg/hu3.png);}
+        }
+
+        @-webkit-keyframes hu /* Safari and Chrome */
+        {
+            0%   {background-image:url(img/cartoonImg/hu1.png);}
+            25%  {background-image:url(img/cartoonImg/hu2.png);}
+            50%  {background-image:url(img/cartoonImg/hu3.png);}
+            100% {background-image:url(img/cartoonImg/hu3.png);}
+        }
+
+        @-o-keyframes hu /* Opera */
+        {
+            0%   {background-image:url(img/cartoonImg/hu1.png);}
+            25%  {background-image:url(img/cartoonImg/hu2.png);}
+            50%  {background-image:url(img/cartoonImg/hu3.png);}
+            100% {background-image:url(img/cartoonImg/hu3.png);}
+        }
+    </style>
+</head>
+<>
+
+<div id="WebGL-output">
+</div>
+
+<img id="background" src="img/backIcon/background.png" style="
+    width: 1550px;
+    height:776px;
+    position: absolute;
+    left:0%;
+    display:block;
+    top: 0%;
+
+"/>
+
+<img id="Mytitle" src="img/backIcon/title.png" style="
+    width: 296px;
+    height:88px;
+    position: absolute;
+    left:40%;
+    display:block;
+    top: 13%;
+
+"/>
+
+<!-->
+<img id="logo" src="img/backIcon/startgame.png" style="width: 544px;
+    height:300px;
+    position: absolute;
+    left:30%;
+    display:block;
+    top: 70%;" onclick='//isInGame = true;
+            send(playerLinkNumber);
+			document.getElementById("logo").style.display = "none";'/>
+<img id="gameover" src="img/backIcon/gameover.png" style="width: 544px;
+    height:300px;
+    position: absolute;
+    left:30%;
+    display:none;
+    top: 25%;" onclick='
+    document.getElementById("gameover").style.display = "none";
+    document.getElementById("resetgame").style.display = "none";
+    resetAllGame();
+'/>
+
+
+
+<img id="resetgame" src="img/backIcon/resetgame.png" style="width: 544px;
+    height:300px;
+    position: absolute;
+    left:30%;
+    display:none;
+    top: 40%;" onclick='
+    document.getElementById("gameover").style.display = "none";
+    document.getElementById("resetgame").style.display = "none";
+    resetAllGame();
+'/>
+
+
+
+<img id="guo" src="img/functionImg/finalguo.png" style="width: 59px;
+    height:59px;
+    transform:scale(1.2);
+    position: absolute;
+    left:65%;
+    display:none;
+    top: 70%;" onclick='
+            qpHuPaiFlag=false;
+            mahjongChiFlag=false;
+            mahjongGangFlag=false;
+            mahJongPengPaiFlag=false;
+			document.getElementById("guo").style.display = "none";
+    document.getElementById("chi").style.display = "none";
+    document.getElementById("chi1").style.display = "none";
+    document.getElementById("chi2").style.display = "none";
+    document.getElementById("gang").style.display = "none";
+    document.getElementById("peng").style.display = "none";
+    document.getElementById("peng1").style.display = "none";
+    document.getElementById("gang1").style.display = "none";
+    document.getElementById("gang2").style.display = "none";
+    document.getElementById("gang3").style.display = "none";
+    document.getElementById("hu").style.display = "none";
+'/>
+<img id="chi" src="img/functionImg/finalchi.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:50%;
+    display:none;
+    top: 65%;" onclick='
+    chiIconManager();
+    console.log("mahjongChiNumberArray1:"+mahjongChiNumberArray1);
+'/>
+
+<!--左边框40%的ChiIcon-->
+<img id="chi1" src="img/functionImg/finalchi.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left: 40%;
+    display:none;
+    top: 65%;" onclick='
+    chiIconManager();
+    console.log("mahjongChiNumberArray1:"+mahjongChiNumberArray1);
+'/>
+<!--左边框30%的ChiIcon-->
+<img id="chi2" src="img/functionImg/finalchi.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:30%;
+    display:none;
+    top: 65%;" onclick='
+    chiIconManager();
+    console.log("mahjongChiNumberArray1:"+mahjongChiNumberArray1);
+'/>
+
+<img id="peng" src="img/functionImg/finalpeng.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:50%;
+    display:none;
+    top: 65%;" onclick='
+    pengIconManager();
+
+'/>
+<!--左边框40%的PengIcon-->
+<img id="peng1" src="img/functionImg/finalpeng.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:40%;
+    display:none;
+    top: 65%;" onclick='
+    pengIconManager();
+
+'/>
+
+<img id="gang" src="img/functionImg/finalgang.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:50%;
+    display:none;
+    top: 65%;" onclick='
+    console.log("mahJongGangPaiFlag:"+mahjongGangFlag);
+    document.getElementById("guo").style.display = "none";
+    document.getElementById("chi").style.display = "none";
+    document.getElementById("chi1").style.display = "none";
+    document.getElementById("chi2").style.display = "none";
+    document.getElementById("gang").style.display = "none";
+    document.getElementById("gang1").style.display = "none";
+    document.getElementById("gang2").style.display = "none";
+    document.getElementById("gang3").style.display = "none";
+    document.getElementById("peng").style.display = "none";
+    document.getElementById("peng1").style.display = "none";
+    document.getElementById("hu").style.display = "none";
+    console.log("mahjongGangNumber0:"+mahjongGangNumber);
+    send(gangMahJongAndPlayer);
+    addManjongGangCartoon();
+
+'/>
+<!--左边框40%的GangIcon-->
+<img id="gang1" src="img/functionImg/finalgang.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:40%;
+    display:none;
+    top: 65%;" onclick='
+    console.log("mahJongGangPaiFlag:"+mahjongGangFlag);
+    document.getElementById("guo").style.display = "none";
+    document.getElementById("chi").style.display = "none";
+    document.getElementById("chi1").style.display = "none";
+    document.getElementById("chi2").style.display = "none";
+    document.getElementById("gang").style.display = "none";
+    document.getElementById("peng").style.display = "none";
+    document.getElementById("peng1").style.display = "none";
+    document.getElementById("gang1").style.display = "none";
+    document.getElementById("gang2").style.display = "none";
+    document.getElementById("gang3").style.display = "none";
+    document.getElementById("hu").style.display = "none";
+    console.log("mahjongGangNumber1:"+mahjongGangNumber);
+    send(gangMahJongAndPlayer);
+    addManjongGangCartoon();
+
+'/>
+
+<!--左边框30%的GangIcon-->
+<img id="gang2" src="img/functionImg/finalgang.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:30%;
+    display:none;
+    top: 65%;" onclick='
+    console.log("mahJongGangPaiFlag:"+mahjongGangFlag);
+    document.getElementById("guo").style.display = "none";
+    document.getElementById("chi").style.display = "none";
+    document.getElementById("chi1").style.display = "none";
+    document.getElementById("chi2").style.display = "none";
+    document.getElementById("gang").style.display = "none";
+    document.getElementById("peng").style.display = "none";
+    document.getElementById("peng1").style.display = "none";
+    document.getElementById("gang1").style.display = "none";
+    document.getElementById("gang2").style.display = "none";
+    document.getElementById("gang3").style.display = "none";
+    document.getElementById("hu").style.display = "none";
+    console.log("mahjongGangNumber2:"+mahjongGangNumber);
+    send(gangMahJongAndPlayer);
+    addManjongGangCartoon();
+
+'/>
+
+<!--左边框20%的GangIcon-->
+<img id="gang3" src="img/functionImg/finalgang.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:20%;
+    display:none;
+    top: 65%;" onclick='
+    var delImg = document.getElementById("gang3");
+    delImg.parentNode.removeChild(delImg);
+    console.log("mahJongGangPaiFlag:"+mahjongGangFlag);
+    document.getElementById("guo").style.display = "none";
+    document.getElementById("chi").style.display = "none";
+    document.getElementById("chi1").style.display = "none";
+    document.getElementById("chi2").style.display = "none";
+    document.getElementById("gang").style.display = "none";
+    document.getElementById("peng").style.display = "none";
+    document.getElementById("peng1").style.display = "none";
+    document.getElementById("gang1").style.display = "none";
+    document.getElementById("gang2").style.display = "none";
+    document.getElementById("gang3").style.display = "none";
+    document.getElementById("hu").style.display = "none";
+    console.log("mahjongGangNumber3:"+mahjongGangNumber);
+    send(gangMahJongAndPlayer);
+    addManjongGangCartoon();
+
+'/>
+<img id="ting" src="img/functionImg/finalting.png" style="width: 118px;
+    height:118px;
+    position: absolute;
+    left:50%;
+    display:none;
+    top: 65%;">
+<img id="hu" src="img/functionImg/finalhu.png" style="width: 165px;
+    height:127px;
+    position: absolute;
+    left:50%;
+    display:none;
+    top: 65%;" onclick='addMaJongHuPaiCartoon();
+    document.getElementById("guo").style.display = "none";
+    document.getElementById("chi").style.display = "none";
+    document.getElementById("chi1").style.display = "none";
+    document.getElementById("chi2").style.display = "none";
+    document.getElementById("gang").style.display = "none";
+    document.getElementById("peng").style.display = "none";
+    document.getElementById("peng1").style.display = "none";
+    document.getElementById("gang1").style.display = "none";
+    document.getElementById("gang2").style.display = "none";
+    document.getElementById("gang3").style.display = "none";
+    document.getElementById("hu").style.display = "none";
+    document.getElementById("huCartoon").style.display = "block";
+    document.getElementById("backgroundChineseInk").style.display = "block";
+    mahjongPengChiHuIconOrder();
+    send(HuMahJongAndPlayer);
+    clickChupaiFlag=true;
+    stopChupaiTime();
+    stopFinalStartTime();
+    qpHuPaiFlag=false;
+    mouseClickFlag=true;
+'/>
+
+<img id="linkNumber3" src="img/linknumber/linkNumber3.png">
+<img id="linkNumber2" src="img/linknumber/linkNumber2.png">
+<img id="linkNumber1" src="img/linknumber/linkNumber1.png">
+<img id="linkNumber0" src="img/linknumber/linkNumber0.png">
+
+<div id="backgroundChineseInk" class="backgroundChineseInk"></div>
+<div id="huCartoon" class="hu"></div>
+<div id="chiCartoon" class="chi"></div>
+<div id="pengCartoon" class="peng"></div>
+<div id="gangCartoon" class="gang"></div>
+
+<div id="timeCartoon" class="cTime"></div>
+<script type="text/javascript">
+
+
+
+//	function animate() {
+//		requestAnimationFrame( animate );
+//		controls.update();
+//	}
+    window.onload = addWebSocket();
+</script>
+</body>
+</html>

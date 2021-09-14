@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/js/myUtils/Constant.js" line="61" />
+    <bookmark url="file://$PROJECT_DIR$/Mahjong.html" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4bd839b5-184e-4da9-ae1f-b4e69ad26f6a" name="Default" comment="" />
+    <ignored path="mj.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mj" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="mj_bg.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/mj/mj_bg.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nan.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/mj/nan.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tiao_1.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/mj/tiao_1.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="countdown_time_1.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/time/countdown_time_1.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="216_04073.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/textures/216_04073.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="green.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/textures/green.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="white.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/textures/white.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="216_map001.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/textures/216_map001.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="216_wood01.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/textures/216_wood01.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kbmj.obj" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/kbmj.obj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>var</find>
+      <find>particle</find>
+      <find>starttime()</find>
+      <find>continueYesOrNoFlag</find>
+      <find>getWebSocketMahJong</find>
+      <find>send</find>
+      <find>startTimeCount1</find>
+      <find>fapaiflag</find>
+      <find>gang</find>
+      <find>starttime</find>
+      <find>startFinaltime</find>
+      <find>ohtherClickFlag</find>
+      <find>requestNextPlayer</find>
+      <find>requestGangNumber</find>
+      <find>getWebSocketTempDirection</find>
+      <find>backOrderManager</find>
+      <find>count</find>
+      <find>Counter</find>
+      <find>mouseClickFlag</find>
+      <find>addChupaiTranslationAndRotate</find>
+      <find>addChupaiTranslation</find>
+      <find>threeChupaiSmallTranslation</find>
+      <find>threeChupaiTranslation</find>
+      <find>arrangeEndPengChiHuMahjong</find>
+      <find>console</find>
+      <find>arrangePengChiHuMahjong</find>
+      <find>clickChupaiFlag</find>
+      <find>mjpCounter</find>
+      <find>theta</find>
+      <find>smallImageRotate</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/rules/mahjongGangManager.js" />
+        <option value="$PROJECT_DIR$/js/rules/mahjongHuManager.js" />
+        <option value="$PROJECT_DIR$/util/toolsUtil.js" />
+        <option value="$PROJECT_DIR$/js/init/initmj.js" />
+        <option value="$PROJECT_DIR$/js/rules/directionmanager.js" />
+        <option value="$PROJECT_DIR$/js/rules/iconManager.js" />
+        <option value="$PROJECT_DIR$/util/webSocketLinkUtil.js" />
+        <option value="$PROJECT_DIR$/util/Constant.js" />
+        <option value="$PROJECT_DIR$/js/init/initMusic.js" />
+        <option value="$PROJECT_DIR$/util/mouseListenerUtil.js" />
+        <option value="$PROJECT_DIR$/myUtils/mouseListenerUtil.js" />
+        <option value="$PROJECT_DIR$/myUtils/playersUtil.js" />
+        <option value="$PROJECT_DIR$/myUtils/webSocketLinkUtil.js" />
+        <option value="$PROJECT_DIR$/js/rules/orderManager.js" />
+        <option value="$PROJECT_DIR$/js/rules/start.js" />
+        <option value="$PROJECT_DIR$/js/add/addmouselistener.js" />
+        <option value="$PROJECT_DIR$/js/rules/endchupaicartoon.js" />
+        <option value="$PROJECT_DIR$/js/add/addEndChupaiCartoon.js" />
+        <option value="$PROJECT_DIR$/js/myUtils/mouseListenerUtil.js" />
+        <option value="$PROJECT_DIR$/js/Manager/orderManager.js" />
+        <option value="$PROJECT_DIR$/js/Manager/mahjongHuManager.js" />
+        <option value="$PROJECT_DIR$/js/myUtils/toolsUtil.js" />
+        <option value="$PROJECT_DIR$/js/Manager/mahjongPengManager.js" />
+        <option value="$PROJECT_DIR$/js/Manager/mahjongGangManager.js" />
+        <option value="$PROJECT_DIR$/js/Manager/mahjongChiManager.js" />
+        <option value="$PROJECT_DIR$/js/init/initmjpmaterial.js" />
+        <option value="$PROJECT_DIR$/js/add/addSprite.js" />
+        <option value="$PROJECT_DIR$/js/Manager/iconManager.js" />
+        <option value="$PROJECT_DIR$/js/add/addMahJongChiCartoon.js" />
+        <option value="$PROJECT_DIR$/js/add/addMahJongPengCartoon.js" />
+        <option value="$PROJECT_DIR$/js/rules/qpsort.js" />
+        <option value="$PROJECT_DIR$/js/add/addMaJongHuPaiCartoon.js" />
+        <option value="$PROJECT_DIR$/js/rules/resetGame.js" />
+        <option value="$PROJECT_DIR$/js/add/addSkyBox.js" />
+        <option value="$PROJECT_DIR$/css/styles.css" />
+        <option value="$PROJECT_DIR$/js/add/addManjongGangCartoon.js" />
+        <option value="$PROJECT_DIR$/js/init/initscene.js" />
+        <option value="$PROJECT_DIR$/js/rules/northPlayer.js" />
+        <option value="$PROJECT_DIR$/js/rules/eastPlayer.js" />
+        <option value="$PROJECT_DIR$/js/rules/southPlayer.js" />
+        <option value="$PROJECT_DIR$/js/rules/westPlayer.js" />
+        <option value="$PROJECT_DIR$/js/myUtils/playersUtil.js" />
+        <option value="$PROJECT_DIR$/js/myUtils/webSocketLinkUtil.js" />
+        <option value="$PROJECT_DIR$/js/rules/time.js" />
+        <option value="$PROJECT_DIR$/js/rules/mahJongPengChiHu.js" />
+        <option value="$PROJECT_DIR$/js/add/addwebsocketlink.js" />
+        <option value="$PROJECT_DIR$/example.html" />
+        <option value="$PROJECT_DIR$/Mahjong.html" />
+        <option value="$PROJECT_DIR$/js/myUtils/Constant.js" />
+        <option value="$PROJECT_DIR$/js/init/initScene.js" />
+        <option value="$PROJECT_DIR$/js/rules/mahJongHuRules.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-54" />
+    <option name="y" value="136" />
+    <option name="width" value="1924" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="backIcon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="cartoonImg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="direction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="functionImg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="linknumber" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="time" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="add" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="init" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="myUtils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="rules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="textures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mj" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="three.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/srm/Desktop/apache-tomcat-6.0.14/webapps/mj/js/rules/start.js" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\img\backIcon" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\img" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\img\direction" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\img\time" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\img\backIcon" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\js" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\js\Manager" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\myUtils" />
+      <recent name="C:\Users\srm\Desktop\apache-tomcat-6.0.14\webapps\mj\img\time" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.example.html?_ijt=a2re2p11udulslsce3hu7cnsfl">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter />
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration name="example.html?_ijt=a2re2p11udulslsce3hu7cnsfl" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mj/example.html?_ijt=a2re2p11udulslsce3hu7cnsfl" />
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.example.html?_ijt=a2re2p11udulslsce3hu7cnsfl" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bd839b5-184e-4da9-ae1f-b4e69ad26f6a" name="Default" comment="" />
+      <created>1499070592803</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1499070592803</updated>
+      <workItem from="1500699008150" duration="11087000" />
+      <workItem from="1500772250935" duration="23430000" />
+      <workItem from="1500858202362" duration="5338000" />
+      <workItem from="1500865780217" duration="1410000" />
+      <workItem from="1500867197256" duration="983000" />
+      <workItem from="1500882276695" duration="4804000" />
+      <workItem from="1500950873244" duration="832000" />
+      <workItem from="1501128820545" duration="4105000" />
+      <workItem from="1501225413141" duration="10225000" />
+      <workItem from="1501294493973" duration="17911000" />
+      <workItem from="1501396000998" duration="7300000" />
+      <workItem from="1501551707315" duration="9484000" />
+      <workItem from="1501811426049" duration="665000" />
+      <workItem from="1501812111457" duration="8000" />
+      <workItem from="1501812141590" duration="14144000" />
+      <workItem from="1504838303440" duration="1960000" />
+      <workItem from="1504841236275" duration="308000" />
+      <workItem from="1504841553507" duration="6543000" />
+      <workItem from="1504858732396" duration="7094000" />
+      <workItem from="1504918242632" duration="7208000" />
+      <workItem from="1505093890374" duration="7263000" />
+      <workItem from="1505179028181" duration="12858000" />
+      <workItem from="1505268800747" duration="4684000" />
+      <workItem from="1505371711289" duration="8125000" />
+      <workItem from="1505388311378" duration="5865000" />
+      <workItem from="1505438283435" duration="15619000" />
+      <workItem from="1505524386331" duration="20335000" />
+      <workItem from="1505611813395" duration="2448000" />
+      <workItem from="1505957189028" duration="21635000" />
+      <workItem from="1505997021854" duration="2852000" />
+      <workItem from="1506043796422" duration="22278000" />
+      <workItem from="1506126367154" duration="4486000" />
+      <workItem from="1506131693754" duration="10753000" />
+      <workItem from="1506389347155" duration="6069000" />
+      <workItem from="1506477437867" duration="5238000" />
+      <workItem from="1506561474416" duration="9790000" />
+      <workItem from="1506649804633" duration="17537000" />
+      <workItem from="1507187016207" duration="7972000" />
+      <workItem from="1507291060620" duration="3955000" />
+      <workItem from="1507340508915" duration="14379000" />
+      <workItem from="1507452109082" duration="1064000" />
+      <workItem from="1507615977567" duration="4758000" />
+      <workItem from="1507698909954" duration="13571000" />
+      <workItem from="1507771710840" duration="12578000" />
+      <workItem from="1507857435358" duration="18022000" />
+      <workItem from="1507897879790" duration="2468000" />
+      <workItem from="1507966976832" duration="2174000" />
+      <workItem from="1507969807496" duration="8951000" />
+      <workItem from="1508115800167" duration="17571000" />
+      <workItem from="1508203662384" duration="13145000" />
+      <workItem from="1508302509296" duration="12672000" />
+      <workItem from="1508377190699" duration="22900000" />
+      <workItem from="1508463151232" duration="13181000" />
+      <workItem from="1508569845705" duration="9385000" />
+      <workItem from="1508808067576" duration="599000" />
+      <workItem from="1508945728103" duration="964000" />
+      <workItem from="1508980256363" duration="16042000" />
+      <workItem from="1509066596209" duration="15054000" />
+      <workItem from="1509156649426" duration="599000" />
+      <workItem from="1509342641866" duration="3487000" />
+      <workItem from="1509412593635" duration="4550000" />
+      <workItem from="1509417226732" duration="9824000" />
+      <workItem from="1509513300561" duration="1711000" />
+      <workItem from="1509515026731" duration="1381000" />
+      <workItem from="1509536985986" duration="3235000" />
+      <workItem from="1509590769575" duration="15967000" />
+      <workItem from="1509691312594" duration="8550000" />
+      <workItem from="1509759021925" duration="599000" />
+      <workItem from="1509945912497" duration="10269000" />
+      <workItem from="1510028963507" duration="15776000" />
+      <workItem from="1510105368772" duration="14524000" />
+      <workItem from="1510130317323" duration="746000" />
+      <workItem from="1510131422875" duration="225000" />
+      <workItem from="1510131654426" duration="15083000" />
+      <workItem from="1510214466586" duration="9445000" />
+      <workItem from="1510541608244" duration="11090000" />
+      <workItem from="1510637187439" duration="23475000" />
+      <workItem from="1510707599989" duration="21325000" />
+      <workItem from="1510817346383" duration="13513000" />
+      <workItem from="1510887643598" duration="15069000" />
+      <workItem from="1510973185769" duration="2159000" />
+      <workItem from="1511077393941" duration="597000" />
+      <workItem from="1511163773589" duration="1160000" />
+      <workItem from="1511337715636" duration="2941000" />
+      <workItem from="1511425357415" duration="1702000" />
+      <workItem from="1511584438964" duration="3750000" />
+      <workItem from="1511675108507" duration="5846000" />
+      <workItem from="1511751721117" duration="10871000" />
+      <workItem from="1511848277274" duration="2639000" />
+      <workItem from="1511929855184" duration="23159000" />
+      <workItem from="1512042682424" duration="780000" />
+      <workItem from="1512115688764" duration="3280000" />
+      <workItem from="1512197741469" duration="6003000" />
+      <workItem from="1512272731688" duration="228000" />
+      <workItem from="1512571219420" duration="599000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="795062000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1058" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13958333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955848" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955848" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/add/addWebSocketLink.js</url>
+          <line>126</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/myUtils/webSocketLinkUtil.js</url>
+          <line>71</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/rules/resetGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="22" column="69" lean-forward="false" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rules/southPlayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1036">
+          <caret line="116" column="5" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Manager/iconManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myUtils/toolsUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12555">
+          <caret line="405" column="1" lean-forward="true" selection-start-line="290" selection-start-column="0" selection-end-line="405" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/init/initScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1643">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="74" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Manager/orderManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15965">
+          <caret line="515" column="0" lean-forward="false" selection-start-line="515" selection-start-column="0" selection-end-line="706" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Manager/mahjongChiManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2387">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Manager/mahjongHuManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5301">
+          <caret line="171" column="4" lean-forward="true" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rules/eastPlayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myUtils/playersUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2480">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="171" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rules/mahJongHuRules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2294">
+          <caret line="74" column="1" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="74" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rules/mahJongPengChiHu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3689">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rules/time.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6851">
+          <caret line="221" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/add/addWebSocketLink.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1147">
+          <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myUtils/mouseListenerUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="235" column="42" lean-forward="false" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myUtils/webSocketLinkUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-713">
+          <caret line="286" column="9" lean-forward="true" selection-start-line="286" selection-start-column="9" selection-end-line="286" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/back2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/background.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/gameover.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/leftdoor.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/resetgame.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/rightdoor.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/rightreddoor.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/startgame.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/backIcon/title.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/chi1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/chi2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/chi3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/gangshangkaihua.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/hu1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/ting1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/yipaoduoxiang1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cartoonImg/hu_moji.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/direction/b.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/direction/d.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/functionImg/finalchi.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/functionImg/finalgang.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/functionImg/finalguo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/functionImg/finalhu.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/linknumber/linkNumber0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/mj/bai.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/mj/mj_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/mj/nan.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/mj/tiao_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/time/countdown_time_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textures/white.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textures/green.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textures/216_04073.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textures/216_map001.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textures/216_wood01.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/kbmj.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
